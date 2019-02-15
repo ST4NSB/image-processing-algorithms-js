@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/theme.css">
+        <meta charset=utf-8 />
+        <title>Image Processing - JS</title>
+    </head>
+    <body>
+
+        <header>
+            <h1>Image Processing with javascript</h1>
+            <h4>Upload an image</h4>
+            <input type='file' onchange="readURL(this);">
+        </header>
+       
+        <hr>
+
+        <canvas id="templateCanvas1">Your browser does not support the HTML5 canvas tag.</canvas>    
+        <canvas id="templateCanvas2">Your browser does not support the HTML5 canvas tag.</canvas>
+            
+        <img id="inputImage" src="#" alt="The input image for processing" hidden> 
+        <canvas id="outputImage" hidden>Your browser does not support the HTML5 canvas tag.</canvas>
+            
+        <hr>
+
+            <button id="infoBttn" onclick="showInfo()">Informations</button>
+            <div id="infoDiv" >
+                <ul>
+                    <li>write code in text area and run it (language: javascript) </li>
+                    <li>clicking Run will execute the program written in text area</li>
+                    <li>the output(second image) will always compute the code in the textarea with the pixels from the first image </li>
+                    <li>matrix: image[line-index][column-index][channel] </li>
+                    <li>there are 4 channels, address them with the constants red, green, blue and alpha </li>
+                    <li>IMAGE_HEIGHT & IMAGE_WIDTH store the values of the image height & witdh </li>
+                    <li>Math object for mathematical functions .. ex: Math.sqrt(x); </li>
+                    <li>grayscale images have all the 3 channels (RGB) the same value (red=green=blue) </li>
+                    <li>there are a few processing template examples available (Negative, Mirror, etc.) </li>
+                    <li>no additional libraries or frameworks have to be added! </li>
+                    <li>console prints errors if they exist (F12 -> Console) </li>
+                </ul>
+            </div>
+
+        <hr>
+
+
+            <div class="img_effects">
+                <button onclick="loadEffect(negativeEffect)">Negative</button>
+                <button onclick="loadEffect(grayscaleTransform)">Grayscale Conversion</button>
+                <button onclick="loadEffect(mirrorEffect)">Mirror X/Y</button>
+                <button onclick="loadEffect(nrOfPixels)">Image Color Intensity</button>
+                <button onclick="loadEffect(contrastAdj)">Contrast Adjustment</button>
+                <button onclick="loadEffect(pixelateEffect)">Pixelate</button>
+                <button onclick="loadEffect(medianFilter)">Median Filter</button>
+                <button onclick="loadEffect(prewittDetection)">Prewitt Operator</button>
+            </div>
+
+        <div class="console">
+            <textarea id="codeArea" spellcheck="false"></textarea>
+            <button id="runBttn" onclick="run()">Run</button>
+        </div>
+      
+        <footer>
+            <a href="https://github.com/ST4NSB">GitHub</a>
+        </footer>
+
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/readimg.js"></script>
+        <script type="text/javascript" src="scripts/imgoperations.js"></script>
+        <script type="text/javascript" src="scripts/algorithms.js"></script>
+        <script type="text/javascript" src="scripts/instructions.js"></script>
+    </body>
+</html>
