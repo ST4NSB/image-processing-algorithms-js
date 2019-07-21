@@ -1,2 +1,2 @@
-# image-processing-with-js
-writing code to process the pixel of an image in a webpage with javascript
+# image-processing-with-javascript
+open index.html, load an image, test templates and write code to process the image
